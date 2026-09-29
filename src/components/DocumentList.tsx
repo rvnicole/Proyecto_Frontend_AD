@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import type { DocumentType } from "../types";
 
 type DocumentListProps = {
@@ -5,6 +6,8 @@ type DocumentListProps = {
 }
 
 export default function DocumentList({ documents }: DocumentListProps) {
+    const navigate = useNavigate();
+
     return (
         <div className="p-5">
             <h3 className="py-3 text-center text-2xl pirata-one-regular">Biblioteca</h3>
@@ -14,6 +17,7 @@ export default function DocumentList({ documents }: DocumentListProps) {
                     <div
                         key={index}
                         className="flex gap-3 p-5 bg-bg/20 backdrop-blur-sm rounded-xl hover:bg-bg/40 hover:scale-105 hover:cursor-pointer"
+                        onClick={() => navigate(`/chat/${document.document}`)}
                     >
                         <div className="border-2 border-r border-input-border rounded-xl" />
 

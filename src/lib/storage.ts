@@ -22,6 +22,12 @@ export const agregarDocumento = (data: NewDocumentType) => {
     localStorage.setItem(DOCUMENTOS_KEY, newDocsStr);
 };
 
+export const obtenerDocumento = (documento: string) => {
+    const docs = obtenerDocumentos();
+    const doc = docs.find(doc => doc.document === documento);
+    return doc;
+};
+
 export const existeDocumento = (documento: string) => {
     const docs = obtenerDocumentos();
     const existe = docs.some(doc => doc.document === documento);
