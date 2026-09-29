@@ -1,4 +1,11 @@
+import DocumentList from "../components/DocumentList";
+import { obtenerDocumentos } from "../lib/storage"
+import type { DocumentType } from "../types";
+
 export default function Home() {
+    const documents = obtenerDocumentos() as DocumentType[];
+
+    if( documents.length ) return <DocumentList documents={documents} />;
     return (
         <div className="flex items-center justify-center mt-36">
             <div className="w-96 text-center p-3 bg-bg/20 backdrop-blur-sm rounded-xl">

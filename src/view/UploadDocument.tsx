@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ButtonSubmit from "../components/ui/ButtonSubmit";
 import MessageError from "../components/ui/MessageError";
-import { agregarDocumento } from "../lib/storage";
+import { agregarDocumento, existeDocumento } from "../lib/storage";
 import { ingesta } from "../api/ingesta";
 import { toast } from 'react-toastify';
 import type { NewDocumentType } from "../types";
@@ -30,6 +30,12 @@ export default function UploadDocument() {
 
         if( !data.title || !data.document ) {
             setError(true);
+            return;
+        }
+
+        const existe = existeDocumento(data.document.name);
+        if( existe ) {
+            toast("El documento ya existe en tu biblioteca", { type: "warning", theme: "dark" });
             return;
         }
 
