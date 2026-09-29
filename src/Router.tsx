@@ -1,8 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LayoutApp from "./layout/LayoutApp";
-import Home from "./view/Home";
 import LayoutAuth from "./layout/LayoutAuth";
+import Home from "./view/Home";
 import Login from "./view/Login";
+import UploadDocument from "./view/UploadDocument";
 
 export default function Router() {
     return (
@@ -13,7 +14,8 @@ export default function Router() {
                 </Route>
 
                 <Route element={<LayoutApp />}>
-                    <Route path="/" element={<Home />}/>            
+                    <Route path="/" element={<Home />}/>       
+                    <Route path="/upload-document" element={<UploadDocument />}/>     
                 </Route>
             </Routes>
         </BrowserRouter>
