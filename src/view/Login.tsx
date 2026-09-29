@@ -2,14 +2,22 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ParchmentCard from "../components/ui/ParchmentCard";
 import ButtonSubmit from "../components/ui/ButtonSubmit";
+import MessageError from "../components/ui/MessageError";
 import { guardarNombre } from "../lib/storage";
 
 export default function Login() {
     const [nombre, setNombre] = useState("");
+    const [error, setError] = useState(false);
     const navigate = useNavigate();
 
     const onSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if( !nombre ) {
+            setError(true);
+            return;
+        }
+
         guardarNombre(nombre);
         navigate("/");
     }
@@ -26,7 +34,7 @@ export default function Login() {
                     className="rounded-lg w-80 md:w-full"
                     title="¿Cuál es tu nombre, joven mago?"
                 >
-                    <form onSubmit={onSubmit} className="flex gap-2 py-5 px-2">
+                    <form onSubmit={onSubmit} className="flex gap-2 pt-5 px-2">
                         <input
                             className="text-text-secondary w-full py-1 px-2 rounded-xl bg-input border border-input-border 
                             outline-none focus:outline-none focus:ring-2 focus:ring-input-border"
@@ -36,6 +44,11 @@ export default function Login() {
 
                         <ButtonSubmit text="Iniciar" />
                     </form>
+
+                    <div className="p-2">
+                        { error && <MessageError message="El nombre es obligatorio"/>}
+                    </div>
+                    
                 </ParchmentCard>
             </div>
         </div>
