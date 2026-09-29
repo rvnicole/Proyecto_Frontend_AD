@@ -1,4 +1,4 @@
-import type { NewDocumentType } from "../components/types";
+import type { NewDocumentType } from "../types";
 
 const NOMBRE_KEY = 'lumos-nombre';
 const DOCUMENTOS_KEY = 'lumos-documentos';

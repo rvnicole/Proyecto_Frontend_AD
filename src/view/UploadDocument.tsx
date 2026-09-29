@@ -5,7 +5,7 @@ import MessageError from "../components/ui/MessageError";
 import { agregarDocumento } from "../lib/storage";
 import { ingesta } from "../api/ingesta";
 import { toast } from 'react-toastify';
-import type { NewDocumentType } from "../components/types";
+import type { NewDocumentType } from "../types";
 
 export default function UploadDocument() {
     const [data, setData] = useState<NewDocumentType>({ title: "" });

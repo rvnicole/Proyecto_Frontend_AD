@@ -1,6 +1,6 @@
 import { api } from "../config/axios";
 import { obtenerNombre } from "../lib/storage";
-import type { NewDocumentType } from "../components/types";
+import type { NewDocumentType } from "../types";
 
 export const ingesta = async (data: NewDocumentType) => {
     try {
