@@ -1,15 +1,27 @@
 @import "tailwindcss";
 
-:root {
-  --bg: #0B0B14;
-  --surface: #151526;
-  --border: #2A2A44;
-  --text: #E8DFC8;
-  --text-muted: #9A98A8;
-  --accent: #F2C14E;
-  --accent-glow: #FFD98A;
-  --magic: #6C4BA6;
-  --forest: #1F4D3A;
+@theme {
+  --color-bg: #0B0B14;
+  --color-surface: #151526;
+  --color-border: #2A2A44;
+  --color-text-primary: #E8DFC8;
+  --color-text-secondary: oklch(37.4% 0.01 67.558);
+  --color-text-muted: #9A98A8;
+  --color-accent: #F2C14E;
+  --color-accent-glow: #FFD98A;
+  --color-magic: oklch(51.1% 0.262 276.966);
+  --color-forest: #1F4D3A;
+  --color-input: #E8DFC8;
+  --color-input-border: #D2AA52;
+}
+
+html {
+  background-color: var(--bg);
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .pirata-one-regular {
