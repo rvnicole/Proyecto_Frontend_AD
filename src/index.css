@@ -2,15 +2,11 @@
 
 @theme {
   --color-bg: #0B0B14;
-  --color-surface: #151526;
   --color-border: #2A2A44;
   --color-text-primary: #E8DFC8;
   --color-text-secondary: oklch(37.4% 0.01 67.558);
   --color-text-muted: #9A98A8;
-  --color-accent: #F2C14E;
-  --color-accent-glow: #FFD98A;
   --color-magic: oklch(51.1% 0.262 276.966);
-  --color-forest: #1F4D3A;
   --color-input: #E8DFC8;
   --color-input-border: #D2AA52;
 }
